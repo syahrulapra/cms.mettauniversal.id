@@ -8,7 +8,9 @@
     "start": "node server.ts",
     "build": "strapi build",
     "strapi": "strapi",
-    "deploy": "strapi deploy"
+    "deploy": "strapi deploy",
+    "build:win": "cross-env NODE_ENV=production npm run build",
+    "start:win": "cross-env NODE_ENV=production npm start"
   },
   "devDependencies": {},
   "dependencies": {
@@ -20,9 +22,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3",
-    "build:win": "cross-env NODE_ENV=production npm run build",
-    "start:win": "cross-env NODE_ENV=production npm start"
+    "styled-components": "5.3.3"
   },
   "author": {
     "name": "A Strapi developer"
