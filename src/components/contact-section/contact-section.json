@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_contact_section_contact_sections",
+  "info": {
+    "displayName": "contact-section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "h1": {
+      "type": "string"
+    },
+    "p": {
+      "type": "text"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "string"
+    }
+  }
+}

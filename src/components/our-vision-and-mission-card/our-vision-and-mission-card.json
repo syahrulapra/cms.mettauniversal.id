@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_our_vision_and_mission_card_our_vision_and_mission_cards",
+  "info": {
+    "displayName": "our-vision-and-mission-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "h1": {
+      "type": "string"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "p": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_our_vision_and_mission_section_our_vision_and_mission_sections",
+  "info": {
+    "displayName": "our-vision-and-mission-section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "h1": {
+      "type": "string"
+    },
+    "vision_and_mission_card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "our-vision-and-mission-card.our-vision-and-mission-card"
+    }
+  }
+}
