@@ -85,17 +85,6 @@ export interface HeroSectionHeroSection extends Schema.Component {
   };
 }
 
-export interface ContentContactUsContentContactUs extends Schema.Component {
-  collectionName: 'components_content_contact_us_content_contact_uses';
-  info: {
-    displayName: 'content-contact-us';
-  };
-  attributes: {
-    title: Attribute.Text;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface ContactSectionContactSection extends Schema.Component {
   collectionName: 'components_contact_section_contact_sections';
   info: {
@@ -133,7 +122,6 @@ declare module '@strapi/types' {
       'our-vision-and-mission-card.our-vision-and-mission-card': OurVisionAndMissionCardOurVisionAndMissionCard;
       'list.list': ListList;
       'hero-section.hero-section': HeroSectionHeroSection;
-      'content-contact-us.content-contact-us': ContentContactUsContentContactUs;
       'contact-section.contact-section': ContactSectionContactSection;
       'about-section.about-section': AboutSectionAboutSection;
     }
