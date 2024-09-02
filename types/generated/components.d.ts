@@ -18,9 +18,9 @@ export interface ProductsSectionProductsSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    label: Attribute.String;
-    title: Attribute.String;
-    description: Attribute.Text;
+    span: Attribute.String;
+    h1: Attribute.String;
+    p: Attribute.Text;
     products: Attribute.Relation<
       'products-section.products-section',
       'oneToMany',
@@ -37,7 +37,7 @@ export interface OurVisionAndMissionSectionOurVisionAndMissionSection
     description: '';
   };
   attributes: {
-    title: Attribute.String;
+    h1: Attribute.String;
     vision_and_mission_card: Attribute.Component<
       'our-vision-and-mission-card.our-vision-and-mission-card',
       true
@@ -53,10 +53,10 @@ export interface OurVisionAndMissionCardOurVisionAndMissionCard
     description: '';
   };
   attributes: {
-    title: Attribute.String;
+    h1: Attribute.String;
     background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    description: Attribute.Text;
+    p: Attribute.Text;
   };
 }
 
@@ -77,9 +77,9 @@ export interface HeroSectionHeroSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    label: Attribute.String;
-    title: Attribute.Text;
-    description: Attribute.Text;
+    span: Attribute.String;
+    h1: Attribute.Text;
+    p: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
   };
@@ -92,8 +92,8 @@ export interface ContactSectionContactSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
+    h1: Attribute.String;
+    p: Attribute.Text;
     background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
   };
@@ -103,12 +103,11 @@ export interface AboutSectionAboutSection extends Schema.Component {
   collectionName: 'components_about_section_about_sections';
   info: {
     displayName: 'about-section';
-    description: '';
   };
   attributes: {
-    label: Attribute.String;
-    title: Attribute.String;
-    description: Attribute.Text;
+    span: Attribute.String;
+    h1: Attribute.String;
+    p: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
