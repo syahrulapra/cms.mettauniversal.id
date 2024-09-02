@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SeoSeo extends Schema.Component {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'seo';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface ProductsSectionProductsSection extends Schema.Component {
   collectionName: 'components_products_section_products_sections';
   info: {
@@ -15,17 +26,6 @@ export interface ProductsSectionProductsSection extends Schema.Component {
       'oneToMany',
       'api::product.product'
     >;
-  };
-}
-
-export interface SeoSeo extends Schema.Component {
-  collectionName: 'components_seo_seos';
-  info: {
-    displayName: 'seo';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
   };
 }
 
@@ -45,16 +45,6 @@ export interface OurVisionAndMissionSectionOurVisionAndMissionSection
   };
 }
 
-export interface ListList extends Schema.Component {
-  collectionName: 'components_list_lists';
-  info: {
-    displayName: 'list';
-  };
-  attributes: {
-    list_name: Attribute.Text;
-  };
-}
-
 export interface OurVisionAndMissionCardOurVisionAndMissionCard
   extends Schema.Component {
   collectionName: 'components_our_vision_and_mission_card_our_vision_and_mission_cards';
@@ -70,17 +60,13 @@ export interface OurVisionAndMissionCardOurVisionAndMissionCard
   };
 }
 
-export interface ContactSectionContactSection extends Schema.Component {
-  collectionName: 'components_contact_section_contact_sections';
+export interface ListList extends Schema.Component {
+  collectionName: 'components_list_lists';
   info: {
-    displayName: 'contact-section';
-    description: '';
+    displayName: 'list';
   };
   attributes: {
-    h1: Attribute.String;
-    p: Attribute.Text;
-    background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    button: Attribute.String;
+    list_name: Attribute.Text;
   };
 }
 
@@ -95,6 +81,31 @@ export interface HeroSectionHeroSection extends Schema.Component {
     h1: Attribute.Text;
     p: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    button: Attribute.String;
+  };
+}
+
+export interface ContentContactUsContentContactUs extends Schema.Component {
+  collectionName: 'components_content_contact_us_content_contact_uses';
+  info: {
+    displayName: 'content-contact-us';
+  };
+  attributes: {
+    title: Attribute.Text;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ContactSectionContactSection extends Schema.Component {
+  collectionName: 'components_contact_section_contact_sections';
+  info: {
+    displayName: 'contact-section';
+    description: '';
+  };
+  attributes: {
+    h1: Attribute.String;
+    p: Attribute.Text;
+    background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
   };
 }
@@ -115,13 +126,14 @@ export interface AboutSectionAboutSection extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'products-section.products-section': ProductsSectionProductsSection;
       'seo.seo': SeoSeo;
+      'products-section.products-section': ProductsSectionProductsSection;
       'our-vision-and-mission-section.our-vision-and-mission-section': OurVisionAndMissionSectionOurVisionAndMissionSection;
-      'list.list': ListList;
       'our-vision-and-mission-card.our-vision-and-mission-card': OurVisionAndMissionCardOurVisionAndMissionCard;
-      'contact-section.contact-section': ContactSectionContactSection;
+      'list.list': ListList;
       'hero-section.hero-section': HeroSectionHeroSection;
+      'content-contact-us.content-contact-us': ContentContactUsContentContactUs;
+      'contact-section.contact-section': ContactSectionContactSection;
       'about-section.about-section': AboutSectionAboutSection;
     }
   }
