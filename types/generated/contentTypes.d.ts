@@ -941,8 +941,8 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    h1: Attribute.String;
-    p: Attribute.Text;
+    title: Attribute.String;
+    description: Attribute.Text;
     products: Attribute.Relation<
       'api::product-page.product-page',
       'oneToMany',

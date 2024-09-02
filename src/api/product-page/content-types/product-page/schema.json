@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "h1": {
+    "title": {
       "type": "string"
     },
-    "p": {
+    "description": {
       "type": "text"
     },
     "products": {

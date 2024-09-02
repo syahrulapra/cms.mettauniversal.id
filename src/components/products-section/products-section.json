@@ -6,13 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "span": {
+    "label": {
       "type": "string"
     },
-    "h1": {
+    "title": {
       "type": "string"
     },
-    "p": {
+    "description": {
       "type": "text"
     },
     "products": {

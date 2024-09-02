@@ -1,28 +1,30 @@
 {
   "collectionName": "components_about_section_about_sections",
   "info": {
-    "displayName": "about-section"
+    "displayName": "about-section",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "span": {
+    "label": {
       "type": "string"
     },
-    "h1": {
+    "title": {
       "type": "string"
     },
-    "p": {
+    "description": {
       "type": "text"
     },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

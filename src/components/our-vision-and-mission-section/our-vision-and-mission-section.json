@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "h1": {
+    "title": {
       "type": "string"
     },
     "vision_and_mission_card": {
