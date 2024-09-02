@@ -1,4 +1,4 @@
-const strapi = require('@strapi/strapi');
+import strapi from '@strapi/strapi'
 
 if (process.env.NODE_ENV == "development")
     // @ts-ignore
