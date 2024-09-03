@@ -966,6 +966,36 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
   };
 }
 
+export interface ApiTermOfServiceTermOfService extends Schema.SingleType {
+  collectionName: 'term_of_services';
+  info: {
+    singularName: 'term-of-service';
+    pluralName: 'term-of-services';
+    displayName: 'Term of Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    term_of_service_content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::term-of-service.term-of-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::term-of-service.term-of-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -989,6 +1019,7 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
       'api::product-page.product-page': ApiProductPageProductPage;
+      'api::term-of-service.term-of-service': ApiTermOfServiceTermOfService;
     }
   }
 }

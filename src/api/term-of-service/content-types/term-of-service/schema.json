@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "term_of_services",
+  "info": {
+    "singularName": "term-of-service",
+    "pluralName": "term-of-services",
+    "displayName": "Term of Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term_of_service_content": {
+      "type": "blocks"
+    }
+  }
+}

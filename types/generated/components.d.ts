@@ -18,9 +18,9 @@ export interface ProductsSectionProductsSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    span: Attribute.String;
-    h1: Attribute.String;
-    p: Attribute.Text;
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
     products: Attribute.Relation<
       'products-section.products-section',
       'oneToMany',
@@ -37,26 +37,11 @@ export interface OurVisionAndMissionSectionOurVisionAndMissionSection
     description: '';
   };
   attributes: {
-    h1: Attribute.String;
+    title: Attribute.String;
     vision_and_mission_card: Attribute.Component<
       'our-vision-and-mission-card.our-vision-and-mission-card',
       true
     >;
-  };
-}
-
-export interface OurVisionAndMissionCardOurVisionAndMissionCard
-  extends Schema.Component {
-  collectionName: 'components_our_vision_and_mission_card_our_vision_and_mission_cards';
-  info: {
-    displayName: 'our-vision-and-mission-card';
-    description: '';
-  };
-  attributes: {
-    h1: Attribute.String;
-    background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    p: Attribute.Text;
   };
 }
 
@@ -70,6 +55,21 @@ export interface ListList extends Schema.Component {
   };
 }
 
+export interface OurVisionAndMissionCardOurVisionAndMissionCard
+  extends Schema.Component {
+  collectionName: 'components_our_vision_and_mission_card_our_vision_and_mission_cards';
+  info: {
+    displayName: 'our-vision-and-mission-card';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+  };
+}
+
 export interface HeroSectionHeroSection extends Schema.Component {
   collectionName: 'components_hero_section_hero_sections';
   info: {
@@ -77,11 +77,22 @@ export interface HeroSectionHeroSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    span: Attribute.String;
-    h1: Attribute.Text;
-    p: Attribute.Text;
+    label: Attribute.String;
+    title: Attribute.Text;
+    description: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
+  };
+}
+
+export interface ContentContactUsContentContactUs extends Schema.Component {
+  collectionName: 'components_content_contact_us_content_contact_uses';
+  info: {
+    displayName: 'content-contact-us';
+  };
+  attributes: {
+    title: Attribute.Text;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -92,8 +103,8 @@ export interface ContactSectionContactSection extends Schema.Component {
     description: '';
   };
   attributes: {
-    h1: Attribute.String;
-    p: Attribute.Text;
+    title: Attribute.String;
+    description: Attribute.Text;
     background: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
   };
@@ -103,11 +114,12 @@ export interface AboutSectionAboutSection extends Schema.Component {
   collectionName: 'components_about_section_about_sections';
   info: {
     displayName: 'about-section';
+    description: '';
   };
   attributes: {
-    span: Attribute.String;
-    h1: Attribute.String;
-    p: Attribute.Text;
+    label: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
@@ -118,9 +130,10 @@ declare module '@strapi/types' {
       'seo.seo': SeoSeo;
       'products-section.products-section': ProductsSectionProductsSection;
       'our-vision-and-mission-section.our-vision-and-mission-section': OurVisionAndMissionSectionOurVisionAndMissionSection;
-      'our-vision-and-mission-card.our-vision-and-mission-card': OurVisionAndMissionCardOurVisionAndMissionCard;
       'list.list': ListList;
+      'our-vision-and-mission-card.our-vision-and-mission-card': OurVisionAndMissionCardOurVisionAndMissionCard;
       'hero-section.hero-section': HeroSectionHeroSection;
+      'content-contact-us.content-contact-us': ContentContactUsContentContactUs;
       'contact-section.contact-section': ContactSectionContactSection;
       'about-section.about-section': AboutSectionAboutSection;
     }
