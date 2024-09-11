@@ -802,6 +802,7 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
   attributes: {
     hero: Attribute.Component<'hero-section.hero-section'>;
     vision_and_mission: Attribute.Component<'our-vision-and-mission-section.our-vision-and-mission-section'>;
+    seo: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -838,6 +839,7 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
       'content-contact-us.content-contact-us',
       true
     >;
+    seo: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -948,6 +950,7 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
       'oneToMany',
       'api::product.product'
     >;
+    seo: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -972,12 +975,14 @@ export interface ApiTermOfServiceTermOfService extends Schema.SingleType {
     singularName: 'term-of-service';
     pluralName: 'term-of-services';
     displayName: 'Term of Service';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     term_of_service_content: Attribute.Blocks;
+    seo: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

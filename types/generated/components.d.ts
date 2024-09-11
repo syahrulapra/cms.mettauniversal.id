@@ -4,10 +4,12 @@ export interface SeoSeo extends Schema.Component {
   collectionName: 'components_seo_seos';
   info: {
     displayName: 'seo';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -45,16 +47,6 @@ export interface OurVisionAndMissionSectionOurVisionAndMissionSection
   };
 }
 
-export interface ListList extends Schema.Component {
-  collectionName: 'components_list_lists';
-  info: {
-    displayName: 'list';
-  };
-  attributes: {
-    list_name: Attribute.Text;
-  };
-}
-
 export interface OurVisionAndMissionCardOurVisionAndMissionCard
   extends Schema.Component {
   collectionName: 'components_our_vision_and_mission_card_our_vision_and_mission_cards';
@@ -70,6 +62,27 @@ export interface OurVisionAndMissionCardOurVisionAndMissionCard
   };
 }
 
+export interface ListList extends Schema.Component {
+  collectionName: 'components_list_lists';
+  info: {
+    displayName: 'list';
+  };
+  attributes: {
+    list_name: Attribute.Text;
+  };
+}
+
+export interface ContentContactUsContentContactUs extends Schema.Component {
+  collectionName: 'components_content_contact_us_content_contact_uses';
+  info: {
+    displayName: 'content-contact-us';
+  };
+  attributes: {
+    title: Attribute.Text;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface HeroSectionHeroSection extends Schema.Component {
   collectionName: 'components_hero_section_hero_sections';
   info: {
@@ -82,17 +95,6 @@ export interface HeroSectionHeroSection extends Schema.Component {
     description: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
-  };
-}
-
-export interface ContentContactUsContentContactUs extends Schema.Component {
-  collectionName: 'components_content_contact_us_content_contact_uses';
-  info: {
-    displayName: 'content-contact-us';
-  };
-  attributes: {
-    title: Attribute.Text;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -130,10 +132,10 @@ declare module '@strapi/types' {
       'seo.seo': SeoSeo;
       'products-section.products-section': ProductsSectionProductsSection;
       'our-vision-and-mission-section.our-vision-and-mission-section': OurVisionAndMissionSectionOurVisionAndMissionSection;
-      'list.list': ListList;
       'our-vision-and-mission-card.our-vision-and-mission-card': OurVisionAndMissionCardOurVisionAndMissionCard;
-      'hero-section.hero-section': HeroSectionHeroSection;
+      'list.list': ListList;
       'content-contact-us.content-contact-us': ContentContactUsContentContactUs;
+      'hero-section.hero-section': HeroSectionHeroSection;
       'contact-section.contact-section': ContactSectionContactSection;
       'about-section.about-section': AboutSectionAboutSection;
     }

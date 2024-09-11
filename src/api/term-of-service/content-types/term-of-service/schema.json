@@ -4,7 +4,8 @@
   "info": {
     "singularName": "term-of-service",
     "pluralName": "term-of-services",
-    "displayName": "Term of Service"
+    "displayName": "Term of Service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,11 @@
   "attributes": {
     "term_of_service_content": {
       "type": "blocks"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

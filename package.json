@@ -5,12 +5,10 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "node server.ts",
+    "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "deploy": "strapi deploy",
-    "build:win": "cross-env NODE_ENV=production npm run build",
-    "start:win": "cross-env NODE_ENV=production npm start"
+    "deploy": "strapi deploy"
   },
   "devDependencies": {},
   "dependencies": {

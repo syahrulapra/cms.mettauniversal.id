@@ -23,6 +23,11 @@
       "type": "component",
       "repeatable": true,
       "component": "content-contact-us.content-contact-us"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

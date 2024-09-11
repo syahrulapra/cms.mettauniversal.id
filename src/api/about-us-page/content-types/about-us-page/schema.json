@@ -21,6 +21,11 @@
       "type": "component",
       "repeatable": false,
       "component": "our-vision-and-mission-section.our-vision-and-mission-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
