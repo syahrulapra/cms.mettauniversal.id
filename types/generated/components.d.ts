@@ -1,18 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface SeoSeo extends Schema.Component {
-  collectionName: 'components_seo_seos';
-  info: {
-    displayName: 'seo';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface ProductsSectionProductsSection extends Schema.Component {
   collectionName: 'components_products_section_products_sections';
   info: {
@@ -28,6 +15,19 @@ export interface ProductsSectionProductsSection extends Schema.Component {
       'oneToMany',
       'api::product.product'
     >;
+  };
+}
+
+export interface SeoSeo extends Schema.Component {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'seo';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -72,17 +72,6 @@ export interface ListList extends Schema.Component {
   };
 }
 
-export interface ContentContactUsContentContactUs extends Schema.Component {
-  collectionName: 'components_content_contact_us_content_contact_uses';
-  info: {
-    displayName: 'content-contact-us';
-  };
-  attributes: {
-    title: Attribute.Text;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface HeroSectionHeroSection extends Schema.Component {
   collectionName: 'components_hero_section_hero_sections';
   info: {
@@ -95,6 +84,17 @@ export interface HeroSectionHeroSection extends Schema.Component {
     description: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Attribute.String;
+  };
+}
+
+export interface ContentContactUsContentContactUs extends Schema.Component {
+  collectionName: 'components_content_contact_us_content_contact_uses';
+  info: {
+    displayName: 'content-contact-us';
+  };
+  attributes: {
+    title: Attribute.Text;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -129,13 +129,13 @@ export interface AboutSectionAboutSection extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'seo.seo': SeoSeo;
       'products-section.products-section': ProductsSectionProductsSection;
+      'seo.seo': SeoSeo;
       'our-vision-and-mission-section.our-vision-and-mission-section': OurVisionAndMissionSectionOurVisionAndMissionSection;
       'our-vision-and-mission-card.our-vision-and-mission-card': OurVisionAndMissionCardOurVisionAndMissionCard;
       'list.list': ListList;
-      'content-contact-us.content-contact-us': ContentContactUsContentContactUs;
       'hero-section.hero-section': HeroSectionHeroSection;
+      'content-contact-us.content-contact-us': ContentContactUsContentContactUs;
       'contact-section.contact-section': ContactSectionContactSection;
       'about-section.about-section': AboutSectionAboutSection;
     }

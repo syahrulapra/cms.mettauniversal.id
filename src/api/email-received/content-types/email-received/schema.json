@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_receiveds",
+  "info": {
+    "singularName": "email-received",
+    "pluralName": "email-receiveds",
+    "displayName": "Email Received"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phonenumber": {
+      "type": "biginteger"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

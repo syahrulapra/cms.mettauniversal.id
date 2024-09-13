@@ -858,6 +858,39 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
   };
 }
 
+export interface ApiEmailReceivedEmailReceived extends Schema.CollectionType {
+  collectionName: 'email_receiveds';
+  info: {
+    singularName: 'email-received';
+    pluralName: 'email-receiveds';
+    displayName: 'Email Received';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.Text;
+    email: Attribute.Email;
+    phonenumber: Attribute.BigInteger;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::email-received.email-received',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::email-received.email-received',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1021,6 +1054,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::email-received.email-received': ApiEmailReceivedEmailReceived;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
       'api::product-page.product-page': ApiProductPageProductPage;
