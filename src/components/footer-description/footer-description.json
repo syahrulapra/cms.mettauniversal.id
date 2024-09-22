@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_footer_description_footer_descriptions",
+  "info": {
+    "displayName": "Footer Description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

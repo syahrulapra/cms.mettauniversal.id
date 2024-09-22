@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contact_pages",
+  "collectionName": "footers",
   "info": {
-    "singularName": "contact-page",
-    "pluralName": "contact-pages",
-    "displayName": "Contact Page",
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
     "description": ""
   },
   "options": {
@@ -12,16 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "seo": {
+    "footer_description": {
+      "displayName": "Footer Description",
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo"
+      "component": "footer-description.footer-description"
     },
     "list_contacts": {
       "type": "relation",

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "products",
+  "collectionName": "list_contacts",
   "info": {
-    "singularName": "product",
-    "pluralName": "products",
-    "displayName": "Product",
+    "singularName": "list-contact",
+    "pluralName": "list-contacts",
+    "displayName": "List Contact",
     "description": ""
   },
   "options": {
@@ -12,13 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
+    "info": {
       "type": "text"
     },
-    "thumbnail": {
+    "icon": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -29,15 +26,11 @@
         "audios"
       ]
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "speed": {
+    "title": {
       "type": "string"
     },
-    "price": {
-      "type": "decimal"
+    "link": {
+      "type": "text"
     }
   }
 }

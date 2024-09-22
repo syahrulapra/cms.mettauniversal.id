@@ -835,11 +835,12 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    contents: Attribute.Component<
-      'content-contact-us.content-contact-us',
-      true
-    >;
     seo: Attribute.Component<'seo.seo'>;
+    list_contacts: Attribute.Relation<
+      'api::contact-page.contact-page',
+      'oneToMany',
+      'api::list-contact.list-contact'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -891,6 +892,42 @@ export interface ApiEmailReceivedEmailReceived extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    footer_description: Attribute.Component<'footer-description.footer-description'>;
+    list_contacts: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::list-contact.list-contact'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -926,6 +963,40 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiListContactListContact extends Schema.CollectionType {
+  collectionName: 'list_contacts';
+  info: {
+    singularName: 'list-contact';
+    pluralName: 'list-contacts';
+    displayName: 'List Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    info: Attribute.Text;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    link: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::list-contact.list-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::list-contact.list-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -942,10 +1013,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
     description: Attribute.Text;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Attribute.UID<'api::product.product', 'title'>;
-    limit: Attribute.String;
     speed: Attribute.String;
     price: Attribute.Decimal;
-    duration: Attribute.Enumeration<['month', 'year']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1055,7 +1124,9 @@ declare module '@strapi/types' {
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::email-received.email-received': ApiEmailReceivedEmailReceived;
+      'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::list-contact.list-contact': ApiListContactListContact;
       'api::product.product': ApiProductProduct;
       'api::product-page.product-page': ApiProductPageProductPage;
       'api::term-of-service.term-of-service': ApiTermOfServiceTermOfService;
